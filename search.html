@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" data-theme="autumn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <title>Ricerca per</title>
 </head>
-<body>
+<body id="search">
     <!-- Skip to main content -->
     <a href="#main-content" class="sr-only focus:static focus:w-auto focus:h-auto text-primary underline">Salta al contenuto principale</a>
     <!-- Main -->
@@ -33,13 +34,13 @@
             <label for="city-header" class="font-medium text-primary">
               Di quale città vuoi vedere le previsioni meteo?
             </label>
-            <div class="relative">
-              <input type="text" name="city" id="city-header" class="input input-primary w-full" autocomplete="on">
-                <ul class="dropdown w-full border-[1px] border-sky-500 rounded-lg bg-sky-300 shadow-sm absolute top-[48px] left-[0px] hidden">
+            <div class="relative flex">
+              <input type="search" name="city" id="city-header" class="input input-primary w-full rounded-r-none" autocomplete="on">
+                <ul class="dropdown w-full border-[1px] border-sky-500 rounded-lg bg-sky-300 shadow-sm absolute top-[48px] left-[0px] z-[10] hidden">
               </ul>
+              <button type="submit" class="btn btn-primary rounded-l-none">Cerca</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Cerca</button>
         </form>
         <!-- Offcanvas -->
         <div class="drawer drawer-end block lg:hidden h-max">
@@ -60,21 +61,33 @@
             </div>
             <form class="flex flex-col items-end gap-[16px]" action="search.html">
               <div class="label-container w-full">
-                <label for="city" class="font-medium text-primary">
+                <label for="city-drawer" class="font-medium text-primary">
                   Di quale città vuoi vedere le previsioni meteo?
                 </label>
-                <div class="relative">
-                    <input type="text" name="city" id="city" class="input input-primary w-full" autocomplete="on">
+                <div class="relative flex">
+                  <input type="search" name="city" id="city-drawer" class="input input-primary w-full rounded-r-none" autocomplete="on">
                     <ul class="dropdown w-full border-[1px] border-sky-500 rounded-lg bg-sky-300 shadow-sm absolute top-[48px] left-[0px] hidden">
-  
-                    </ul>
-                  </div>
+                  </ul>
+                  <button type="submit" class="btn btn-primary rounded-l-none">Cerca</button>
               </div>
-            <button type="submit" class="btn btn-primary w-full">Cerca</button>
+              </div>
           </form>
           </div>
         </div>
       </header>
+
+      <!-- Risultati della ricerca -->
+       <section class="w-full my-8" id="main-content">
+        <!-- Div boxato -->
+        <div class="w-full px-4 gap-8">
+          <h1 class="text-2xl text-primary font-medium mb-[16px]" id="risultati-ricerca"></h3>
+          <!-- Card container -->
+          <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-8" id="card-wrapper">
+
+            
+          </div>
+        </div>
+       </section>
 
     
     <!-- Footer -->

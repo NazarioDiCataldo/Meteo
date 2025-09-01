@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
     "daisyui": "^5.0.54",
     "typescript": "~5.8.3",
     "vite": "^7.1.2"

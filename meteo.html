@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="autumn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo</title>
+</head>
+<body id="meteo">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:static focus:w-auto focus:h-auto text-primary underline">Salta al contenuto principale</a>
+    <!-- Main -->
+    <main id="app" class="w-full">
+      <!-- Header -->
+      <header class="p-4 bg-sky-300 w-full flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html">
+          <span class="sr-only">Torna alla home</span>
+          <figure class="w-[3rem]">
+            <img src="./public/vite.svg" alt="Logo di Meteoo" class="w-full">
+          </figure>
+        </a>
+        <!-- Form per cercare il meteo di una specifica città -->
+        <form class="hidden lg:flex items-end" action="search.html">
+          <div class="label-container">
+            <label for="city-header" class="font-medium text-primary">
+              Di quale città vuoi vedere le previsioni meteo?
+            </label>
+            <div class="relative flex">
+              <input type="search" name="city" id="city-header" class="input input-primary w-full rounded-r-none" autocomplete="on">
+                <ul class="dropdown w-full border-[1px] border-sky-500 rounded-lg bg-sky-300 shadow-sm absolute top-[48px] left-[0px] z-[10] hidden">
+              </ul>
+              <button type="submit" class="btn btn-primary rounded-l-none">Cerca</button>
+            </div>
+          </div>
+        </form>
+        <!-- Offcanvas -->
+        <div class="drawer drawer-end block lg:hidden h-max">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle"/>
+          <div class="drawer-content flex justify-end items-end">
+            <!-- Pulsante che aziona l'offcanvas-->
+            <label for="my-drawer" class="btn btn-primary drawer-button cursor-pointer" role="button">
+              Cerca città
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#edd0d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+            </label>
+          </div>
+          <div class="drawer-side bg-sky-300 p-[16px] flex flex-col gap-[32px]">
+            <!-- Offcanvas Header -->
+            <div class="w-full flex justify-end">
+              <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay btn btn-primary w-max cursor-pointer" role="button">Chiudi
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#edd0d0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </label>
+            </div>
+            <form class="flex flex-col items-end gap-[16px]" action="search.html">
+              <div class="label-container w-full">
+                <label for="city-drawer" class="font-medium text-primary">
+                  Di quale città vuoi vedere le previsioni meteo?
+                </label>
+                <div class="relative flex">
+                  <input type="search" name="city" id="city-drawer" class="input input-primary w-full rounded-r-none" autocomplete="on">
+                    <ul class="dropdown w-full border-[1px] border-sky-500 rounded-lg bg-sky-300 shadow-sm absolute top-[48px] left-[0px] hidden">
+                  </ul>
+                  <button type="submit" class="btn btn-primary rounded-l-none">Cerca</button>
+              </div>
+              </div>
+          </form>
+          </div>
+        </div>
+      </header>
+
+    <!-- Sezione con le previsioni meteo -->
+    <section class="w-full my-8">
+        <!-- Div boxato -->
+        <div class="w-full px-4 gap-8">
+            <h1 class="text-2xl text-primary font-medium mb-[16px]" id="risultati-ricerca"></h3>
+          <!-- Card container -->
+          <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-8" id="card-wrapper">
+
+            
+          </div>
+          <!-- Lista con le previsioni -->
+           <ul>
+            
+           </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+      <footer class="w-full p-4 bg-sky-900 text-center text-primary-content">
+        <p>Copyright © 2025 - Meteoo</p>
+      </footer>
+    </main>
+
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
